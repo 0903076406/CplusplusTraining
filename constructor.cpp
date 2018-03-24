@@ -4,7 +4,7 @@ using namespace std;
 
 class Empty {
 public:
-    Empty() {cout<<"Default Copy Constructor"<<endl;}
+    Empty() {cout<<"Defaul Constructor"<<endl;}
     
     Empty (const Empty &rhs) {cout <<"default copy constructor"<<endl;}
     ~Empty() {cout <<"Default deconstructor"<<endl;}
@@ -13,6 +13,10 @@ public:
 
 };
 
+void foo(Empty e)
+{
+    cout <<"Empty foo"<<endl;
+}
 int main(void)
 {
     cout <<"Empty e1" << endl;
@@ -23,6 +27,8 @@ int main(void)
     Empty e3 = e1;
     cout << "Empty e2 = e1"<< endl;
     e2 = e1;
+    cout << "foo get called"<< endl;
+    foo(e1);
     cout << "Exit ..." << endl;
     return 0;
 }
